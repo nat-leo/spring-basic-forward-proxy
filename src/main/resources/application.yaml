@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: newsproxy
+
+newsapi:
+  base-url: https://newsapi.org/v2
+  api-key: ${NEWS_API_KEY}
