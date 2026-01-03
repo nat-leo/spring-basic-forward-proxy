@@ -11,14 +11,13 @@ public class NewsApiConfig {
 
   @Bean
   RestClient newsApiClient(
-      @Value("${newsapi.base-url}") String baseUrl,
-      @Value("${newsapi.api-key}") String apiKey
+    @Value("${newsapi.base-url}") String baseUrl,
+    @Value("${newsapi.api-key}") String apiKey
   ) {
     return RestClient.builder()
-        .baseUrl(baseUrl)
-        // NewsAPI accepts API keys via X-Api-Key header. :contentReference[oaicite:3]{index=3}
-        .defaultHeader("X-Api-Key", apiKey)
-        .defaultHeader(HttpHeaders.ACCEPT, "application/json")
-        .build();
+      .baseUrl(baseUrl)
+      .defaultHeader("X-Api-Key", apiKey)
+      .defaultHeader(HttpHeaders.ACCEPT, "application/json")
+      .build();
   }
 }
